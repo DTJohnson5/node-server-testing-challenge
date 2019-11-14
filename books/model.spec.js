@@ -16,8 +16,8 @@ describe("Book model", () => {
       await Books.remove({ id: 1 });
       const books = await db("books");
       expect(books).not.toContain({
-        title: "Ezra's Gamble",
-        author: "Ryder Windham"
+        title: "the new jim crow",
+        author: "michelle alexander"
       });
     });
   });
