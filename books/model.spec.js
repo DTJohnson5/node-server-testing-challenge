@@ -1,4 +1,4 @@
-const db = require("../data/dbConfig.js");
+const db = require("../data/db-config.js");
 const Books = require("./bookModel.js");
 
 describe("Book model", () => {
@@ -11,9 +11,9 @@ describe("Book model", () => {
     });
   });
 
-  describe("delete()", () => {
+  describe("remove()", () => {
     it("Should delete the book by title.", async () => {
-      await Books.delete({ id: 1 });
+      await Books.remove({ id: 1 });
       const books = await db("books");
       expect(books).not.toContain({
         title: "Ezra's Gamble",
