@@ -17,16 +17,16 @@ module.exports = {
   },
 
   testing: {
-    client: "sqlite3",
+    client: 'sqlite3',
      useNullAsDefault: true,
      connection: {
-      filename: "./data/tests.db3"
+      filename: './data/tests.db3'
     },
     migrations: {
-      directory: "./data/migrations"
+      directory: './data/migrations'
     },
     seeds: {
-      directory: "./data/seeds"
+      directory: './data/seeds'
     }
   }
 };

@@ -1,13 +1,13 @@
 const db = require("../data/db-config.js");
-const Books = require("./bookModel.js");
+const Books = require("./model.js");
 
-describe("Book model", () => {
+describe("book model", () => {
   describe("insert()", () => {
     it("Should insert the book.", async () => {
-      await Books.insert({title: "Rise of the Rebels", author: "Michael Kogge"});
+      await db('books').insert({title: "Rise of the Rebels", author: "Michael Kogge"});
 
       const books = await db("books");
-      expect(books).not.toBeLessThan(3);
+      expect(books.length).toBeGreaterThan(1);
     });
   });
 
